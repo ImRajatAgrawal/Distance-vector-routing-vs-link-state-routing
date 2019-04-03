@@ -1,0 +1,171 @@
+DISTANCE VECTOR ROUTING VS LINK STATE ROUTING
+0.Exit
+1.CREATE A NETWORK TOPOLOGY
+2.IMPLEMENT LSRP
+3.IMPLEMENT DVRP
+Enter your choice:1
+
+Enter type of network:[0: UNDIRECTED] := 1
+
+Enter no of nodes/routers:(<=10)6
+
+Enter links as(u,v) & -1 to terminate:
+		 'u'    |      'v'     |   REMARK
+	   --------------------------------------------
+		  0		1	
+					   LINK TAKEN
+		  0		3
+					   LINK TAKEN
+		  3		0
+					   LINK TAKEN
+		  3		4
+					   LINK TAKEN
+		  1		2
+					   LINK TAKEN
+		  1		3
+					   LINK TAKEN
+		  2		4
+					   LINK TAKEN
+		  2		5
+					   LINK TAKEN
+		  4		1
+					   LINK TAKEN
+		  4		2
+					   LINK TAKEN
+		  5	        4
+					   LINK TAKEN
+		  -1		-1
+
+LINK MATRIX :
+
+ u|v |    0    1    2    3    4    5
+------------------------------------------
+  0  |    0    3  999    5  999  999 
+  1  |  999    0    7    3  999  999 
+  2  |  999  999    0  999    6    1 
+  3  |    3  999  999    0    8  999 
+  4  |  999   12    6  999    0  999 
+  5  |  999  999  999  999    2    0 
+
+DISTANCE VECTOR ROUTING VS LINK STATE ROUTING
+0.Exit
+1.CREATE A NETWORK TOPOLOGY
+2.IMPLEMENT LSRP
+3.IMPLEMENT DVRP
+Enter your choice:2
+
+Enter node/router id to print routing table for:[1-6]4
+
+LSRP ALGORITHM
+Routing table information for router: 4
+		ITERATION [ 1 ]...
+  ------------------------------------------------------------------------
+		    1 |    2 |    3 |    4 |    5 |    6 | 
+  ------------------------------------------------------------------------
+    COST        |   3 |  999 |  999 |    0 |    8 |  999 | 
+  ------------------------------------------------------------------------
+		ITERATION [ 2 ]...
+  ------------------------------------------------------------------------
+		    1 |    2 |    3 |    4 |    5 |    6 | 
+  ------------------------------------------------------------------------
+    COST        |   3 |    6 |  999 |    0 |    8 |  999 | 
+  ------------------------------------------------------------------------
+		ITERATION [ 3 ]...
+  ------------------------------------------------------------------------
+		    1 |    2 |    3 |    4 |    5 |    6 | 
+  ------------------------------------------------------------------------
+    COST        |   3 |    6 |   13 |    0 |    8 |  999 | 
+  ------------------------------------------------------------------------
+		ITERATION [ 4 ]...
+  ------------------------------------------------------------------------
+		    1 |    2 |    3 |    4 |    5 |    6 | 
+  ------------------------------------------------------------------------
+    COST        |   3 |    6 |   13 |    0 |    8 |  999 | 
+  ------------------------------------------------------------------------
+		ITERATION [ 5 ]...
+  ------------------------------------------------------------------------
+		    1 |    2 |    3 |    4 |    5 |    6 | 
+  ------------------------------------------------------------------------
+    COST        |   3 |    6 |   13 |    0 |    8 |   14 | 
+  ------------------------------------------------------------------------
+		Path: [u]->[v]  Min-Cost  Shortest Path
+		      --------  --------  -------------
+		      [4]->[1]     3        4-> 1
+		      [4]->[2]     6        4-> 1-> 2
+		      [4]->[3]    13        4-> 1-> 2-> 3
+		      [4]->[5]     8        4-> 5
+		      [4]->[6]    14        4-> 1-> 2-> 3-> 6
+
+
+DISTANCE VECTOR ROUTING VS LINK STATE ROUTING
+0.Exit
+1.CREATE A NETWORK TOPOLOGY
+2.IMPLEMENT LSRP
+3.IMPLEMENT DVRP
+Enter your choice:3
+
+DVRP ALGORITHM
+Router info for router: 1
+Dest	Next Hop	Dist	Shortest path
+-------------------------------------------------
+1	1		0	[ 1 ]
+2	2		3	[ 1 2 ]
+3	2		10	[ 1 2 3 ]
+4	4		5	[ 1 4 ]
+5	4		13	[ 1 4 5 ]
+6	2		11	[ 1 2 3 6 ]
+Router info for router: 2
+Dest	Next Hop	Dist	Shortest path
+-------------------------------------------------
+1	4		6	[ 2 4 1 ]
+2	2		0	[ 2 ]
+3	3		7	[ 2 3 ]
+4	4		3	[ 2 4 ]
+5	3		10	[ 2 3 6 5 ]
+6	3		8	[ 2 3 6 ]
+Router info for router: 3
+Dest	Next Hop	Dist	Shortest path
+-------------------------------------------------
+1	5		21	[ 3 6 5 2 4 1 ]
+2	6		15	[ 3 6 5 2 ]
+3	3		0	[ 3 ]
+4	5		18	[ 3 6 5 2 4 ]
+5	6		3	[ 3 6 5 ]
+6	6		1	[ 3 6 ]
+Router info for router: 4
+Dest	Next Hop	Dist	Shortest path
+-------------------------------------------------
+1	1		3	[ 4 1 ]
+2	1		6	[ 4 1 2 ]
+3	1		13	[ 4 1 2 3 ]
+4	4		0	[ 4 ]
+5	5		8	[ 4 5 ]
+6	1		14	[ 4 1 2 3 6 ]
+Router info for router: 5
+Dest	Next Hop	Dist	Shortest path
+-------------------------------------------------
+1	2		18	[ 5 2 4 1 ]
+2	2		12	[ 5 2 ]
+3	3		6	[ 5 3 ]
+4	2		15	[ 5 2 4 ]
+5	5		0	[ 5 ]
+6	3		7	[ 5 3 6 ]
+Router info for router: 6
+Dest	Next Hop	Dist	Shortest path
+-------------------------------------------------
+1	5		20	[ 6 5 2 4 1 ]
+2	5		14	[ 6 5 2 ]
+3	5		8	[ 6 5 3 ]
+4	5		17	[ 6 5 2 4 ]
+5	5		2	[ 6 5 ]
+6	6		0	[ 6 ]
+
+DISTANCE VECTOR ROUTING VS LINK STATE ROUTING
+0.Exit
+1.CREATE A NETWORK TOPOLOGY
+2.IMPLEMENT LSRP
+3.IMPLEMENT DVRP
+Enter your choice:0    
+
+you have opted to exit...
+
