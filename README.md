@@ -19,4 +19,4 @@ write a program which will differentiate between distance vector routing and lin
 
 > A value of 999 in the input denotes  infinity i.e no direct link between two routers. 
 
-> check the file-name output.txt for sample test cases.
+> check the file-name **output.txt** for sample test cases.
