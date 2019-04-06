@@ -3,7 +3,7 @@ simulation of distance vector and link state routing protocol used in computer n
 
 ## Problem Definition :
 
-write a program which will differentiate between distance vector routing and link state routing protocol .consider 'n' number of nodes/routers in a network.Make sure that the number of links are greater than n.Randomly initialize weigths for each link. For any source and destination find the shortest path chosen by DVR nad LSR.
+A program which will differentiate between distance vector routing and link state routing protocol . considering 'n' number of nodes/routers in a network. Making  sure that the number of links are greater than n.Randomly initializing weigths for each link. For any source and destination finding the shortest path chosen by DVR and LSR.
 
 ## DESCRIPTION :
   
